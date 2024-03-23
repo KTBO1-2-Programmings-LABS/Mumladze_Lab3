@@ -6,6 +6,7 @@
 
 int main() {
     CarsList all_cars = {(CarNode**) calloc(100, sizeof(CarNode)), 0};
+    printf("List of commands:\n0 - Close program\n1 - Add node\n2 - Find node\n3 - Print all nodes\n4 - Sort\n");
     while (true) {
         UserTask user_task = (UserTask) get_user_task();
         switch (user_task) {
@@ -37,8 +38,7 @@ void clean_input() {
 
 int get_user_task() {
     int user_task = 0;
-    printf("List of commands:\n0 - Close program\n1 - Add node\n2 - Find node\n3 - Print all nodes\n4 - Sort\n"
-            "Choose command: ");
+    printf("Choose command: ");
     scanf("%d", &user_task);
     clean_input();
     return user_task;
